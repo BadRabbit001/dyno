@@ -9,6 +9,17 @@ from itertools import cycle
 client = commands.Bot(command_prefix='!')
 #client = discord.Client()
 
+@client.event
+async def on_message(message):
+    message.content = message.content.lower()
+    author = '{0.author.mention}'.format(message)
+    # we do not want the bot to reply to itself
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('pass:88-unhide'):
+        msg = 'Fuck you! I am hiding you dickhead!'.format(message)
+        await message.channel.send(msg)
         
 @client.event
 async def on_ready():
