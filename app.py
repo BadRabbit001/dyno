@@ -20,6 +20,7 @@ async def on_message(message):
         return
 
     if message.content.startswith('pass:88-unhide'):
+        @commands.has_role('HELPER')
         msg = 'Fuck you! I am hiding you dickhead!'.format(message)
         await message.channel.send(msg)
 bot = commands.Bot(command_prefix = "!")
@@ -30,15 +31,6 @@ async def ban(member: discord.Member, days: int = 1):
         await bot.ban(member, days)
     else:
         await bot.say("You don't have permission to use this command.")
-
-       
-@bot.command()
-@commands.has_role('HELPER')
-async def lol(): 
-    if message.content.startswith('pass:88-unhide'):
-        msg = 'Fuck you! I am hiding you dickhead!'.format(message)
-        await message.channel.send(msg)
-bot = commands.Bot(command_prefix = "!"
 
 
 @client.event
