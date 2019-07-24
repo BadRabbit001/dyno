@@ -19,12 +19,6 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('pass:88-unhide'):
-        @commands.has_role('HELPER')
-        msg = 'Fuck you! I am hiding you dickhead!'.format(message)
-        await message.channel.send(msg)
-bot = commands.Bot(command_prefix = "!")
-
 @bot.command(pass_context = True)
 async def ban(member: discord.Member, days: int = 1):
     if "449706643710541824" in [role.id for role in message.author.roles]:
