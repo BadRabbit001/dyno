@@ -31,7 +31,12 @@ async def on_message(message):
     if message.content.startswith('!hello'):
         msg = 'Hello python {0.author.mention}'.format(message)
         await message.author.send(msg)
-    
+ 
+@bot.command(pass_context=True)
+@commands.has_any_role("Lol", "Infa")
+async def cau(ctx):
+    await bot.say("Hello {}".format(ctx.message.author.mention))
+
 @client.event
 async def on_ready():
     print('Logged in as')
