@@ -9,7 +9,7 @@ from itertools import cycle
 client = commands.Bot(command_prefix='!')
 #client = discord.Client()
 
-status = cycle(['with BlackRabbit', 'with your connection', 'with other rabbits', 'with generator', 'www.rabbit001.cf'])
+status = cycle(['dyno.gg | ?help', 'dyno.gg | ?help', 'dyno.gg | ?help')
 
 @client.event
 async def on_message(message):
