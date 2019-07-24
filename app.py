@@ -9,6 +9,8 @@ from itertools import cycle
 client = commands.Bot(command_prefix='!')
 #client = discord.Client()
 
+status = cycle(['with BlackRabbit', 'with your connection', 'with other rabbits', 'with generator', 'www.rabbit001.cf'])
+
 @client.event
 async def on_message(message):
     message.content = message.content.lower()
