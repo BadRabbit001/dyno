@@ -19,7 +19,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-@bot.command()
+@client.event
 @commands.has_role('HELPER')
 async def on_message(message):
     message.content = message.content.lower()
