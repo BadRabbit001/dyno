@@ -19,14 +19,6 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-@bot.command(pass_context = True)
-async def ban(member: discord.Member, days: int = 1):
-    if "449706643710541824" in [role.id for role in message.author.roles]:
-        await bot.ban(member, days)
-    else:
-        await bot.say("You don't have permission to use this command.")
-
-
 @client.event
 async def on_ready():
     print('Logged in as')
