@@ -19,6 +19,19 @@ async def on_message(message):
     if message.author == client.user:
         return
 
+@bot.command()
+@commands.has_role('HELPER')
+async def on_message(message):
+    message.content = message.content.lower()
+    author = '{0.author.mention}'.format(message)
+    # we do not want the bot to reply to itself
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('!hello'):
+        msg = 'Hello python {0.author.mention}'.format(message)
+        await message.author.send(msg)
+    
 @client.event
 async def on_ready():
     print('Logged in as')
